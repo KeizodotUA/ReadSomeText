@@ -1,0 +1,29 @@
+{
+  "name": "read-some-text",
+  "version": "0.0.1",
+  "description": "todo",
+  "author": "Oleksiy Konstantyniuk",
+  "dependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-scripts": "3.4.1"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "*",
+    "babel": "6.23.0",
+    "babel-loader": "8.1.0",
+    "css-loader": "3.6.0",
+    "file-loader": "6.0.0",
+    "json-loader": "0.5.7",
+    "react-hot-loader": "4.12.21",
+    "style-loader": "1.2.1",
+    "url-loader": "4.1.0",
+    "webpack": "^4.43.0",
+    "webpack-dev-server": "3.11.0"
+  },
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
+}
