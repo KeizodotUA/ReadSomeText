@@ -1,23 +1,13 @@
-// React & Redux
-import React, { useEffect } from 'react';
-import { hot } from 'react-hot-loader/root';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
 
-// React router
-import { BrowserRouter } from 'react-router-dom';
+class App extends Component {
+    render() {
+        return (
+            <div>
+                <h1>UI coming soon</h1>
+            </div>
+        );
+    }
+}
 
-// Actions
-import { saveUrl } from '@actions/application';
-
-// Components
-import Routes from './Routes';
-
-const App = ({ saveUrl }) => {  
-    return (
-      // <BrowserRouter>
-      //   <Routes />
-      // </BrowserRouter>
-      <div>Hello Keizo</div>
-    );
-  };
+export default App;

@@ -1,20 +1,11 @@
-// Absolute imports
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import React from "react";
+import ReactDOM from "react-dom";
 
-// Styles
-import 'src/styles/index.css';
+import './styles/index.css';
 
-// Redux store
-import store from './store/configureStore';
-
-// Components
-import App from './App';
+import App from "./App.js";
 
 ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
-    window.document.getElementById('root'),
+    <App />, 
+    document.getElementById("root")
 );
