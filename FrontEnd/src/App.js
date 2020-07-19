@@ -1,13 +1,18 @@
-import React, { Component } from "react";
+import React, { Component} from 'react'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import MainConteiner from './MainContainer'
+import rootReducer from './reducers'
 
-class App extends Component {
+const store = createStore(rootReducer)
+window.store = store
+
+export default class App extends Component {
     render() {
-        return (
-            <div>
-                <h1>UI coming soon</h1>
-            </div>
-        );
+        return(
+            <Provider store={store}>
+                <MainConteiner/>
+            </Provider>            
+        )
     }
 }
-
-export default App;
