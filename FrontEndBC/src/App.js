@@ -1,16 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 import { Provider } from 'react-redux'
 import store from './store/configureStore'
-import Layout from  './components/Layout'
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './Routes'
 
-class App extends Component {
-    render() {
-        return (
-            <Provider store={store}>
-                <Layout />
-            </Provider>   
-        );
-    }
+const App = () => {
+    return (
+        <Provider store={store}>
+            <BrowserRouter>
+                <Routes />
+            </BrowserRouter>
+        </Provider>
+    )
 }
 
 export default App;

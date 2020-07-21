@@ -4,9 +4,9 @@ export default class Texts extends Component {
     render () {        
         return(
             <div>
-                <button onClick={this.props.addNewText}>
+                {/* <button onClick={this.props.addNewText}>
                     add text
-                </button>
+                </button> */}
 
                 {this.props.texts.map(t => {
                     return <p key={t}>{t}</p>
