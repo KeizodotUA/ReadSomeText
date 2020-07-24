@@ -1,9 +1,12 @@
+// Absolute imports
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import About from './components/About'
-import Home from './components/Home'
-import Main from './components/Main'
-import APIPage from './components/APIPage'
+
+// Loaders
+import About from './components/About/Loadable'
+import Home from './components/Home/Loadable'
+import Main from './components/Main/Loadable'
+import APIPage from './components/APIPage/Loadable'
 
 export default () => (
     <Switch>

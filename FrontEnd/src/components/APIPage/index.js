@@ -1,5 +1,10 @@
+// Absolute imports
 import React, { useState, useEffect } from 'react';
+
+// Components
 import Layout from '../Layout';
+
+// API
 import { getText } from '@api/index.js';
 
 const APIPage = () => {

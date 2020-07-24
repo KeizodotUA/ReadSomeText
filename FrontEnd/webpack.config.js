@@ -17,7 +17,8 @@ module.exports = {
       src: path.resolve('./src'),
       '@components': path.resolve('./src/components'),
       '@api': path.resolve('./src/api'),
-      '@actions': path.resolve('./src/actions')
+      '@actions': path.resolve('./src/actions'),
+      '@shared': path.resolve('./src/components/shared')
     },
   },
   module: {

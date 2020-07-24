@@ -1,3 +1,4 @@
+// Absolute imports
 import React from 'react'
 
 const Texts = (props) => {

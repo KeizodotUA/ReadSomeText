@@ -1,11 +1,21 @@
+// Absolute imports
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import Texts from './Texts'
-import Themes from './Themes'
-import Layout from '../Layout'
+
+// Actions
 import { addNewText } from '@actions/text'
 import { changeTheme } from '@actions/theme'
+
+// Loaders
+import Texts from './Texts/Loadable'
+import Themes from './Themes/Loadable'
+
+// Components
+import Layout from '../Layout'
+
+// Styled
+import { MyButton } from './styled';
 
 const Main = (props) => {
   return (
@@ -18,6 +28,7 @@ const Main = (props) => {
         texts={props.texts}
         addNewText={props.addNewText}
       />
+      <MyButton> Styled button </MyButton>
     </div>
   )
 }
