@@ -1,13 +1,22 @@
-import React, { Component } from "react";
+// Absolute imports
+import React from "react";
+import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom';
 
-class App extends Component {
-    render() {
-        return (
-            <div>
-                <h1>UI coming soon</h1>
-            </div>
-        );
-    }
+// Store
+import store from './store/configureStore'
+
+// Components
+import Routes from './Routes'
+
+const App = () => {
+    return (
+        <Provider store={store}>
+            <BrowserRouter>
+                <Routes />
+            </BrowserRouter>
+        </Provider>
+    )
 }
 
 export default App;
