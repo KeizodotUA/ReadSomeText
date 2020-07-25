@@ -4,12 +4,12 @@ import React from 'react'
 // Components
 import Layout from '../Layout'
 
-const Home = () => {
+const CustomRating = () => {
     return (
         <div>
-            Coming soon
+            Coming soon...
         </div>
     )
 }
 
-export default Layout()(Home);
+export default Layout()(CustomRating);
