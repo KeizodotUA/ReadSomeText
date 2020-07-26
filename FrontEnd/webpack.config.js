@@ -32,7 +32,13 @@ module.exports = {
         test: /\.css$/,
         exclude: /node_modules/,
         use: ["style-loader", "css-loader"]
-      }
+      },
+      {
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.ttf$/, /\.eot$/, /\.woff$/, /\.woff2$/, /\.otf$/],
+        include: path.resolve(__dirname, 'src'),
+        loader: 'url-loader',
+        options: { limit: 10 * 1024, name: 'media/[name].[hash:8].[ext]' },
+      },
     ]
   },
   plugins: [
