@@ -2,3 +2,8 @@
     font-family: 'Whitney';
     background: #efefef;
 }
+
+h3 {
+    margin: 0px; 
+    background: none;
+}

@@ -18,6 +18,7 @@ module.exports = {
       '@components': path.resolve('./src/components'),
       '@api': path.resolve('./src/api'),
       '@actions': path.resolve('./src/actions'),
+      '@icons': path.resolve('./src/assets/icons'),
       '@shared': path.resolve('./src/components/shared')
     },
   },
@@ -38,6 +39,13 @@ module.exports = {
         include: path.resolve(__dirname, 'src'),
         loader: 'url-loader',
         options: { limit: 10 * 1024, name: 'media/[name].[hash:8].[ext]' },
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          { loader: 'babel-loader' },
+          { loader: 'react-svg-loader', options: { jsx: true } },
+        ],
       },
     ]
   },
