@@ -1,4 +1,9 @@
-h1 {
-    color: #27aedb;
-    text-align: center;
+* {
+    font-family: 'Whitney';
+    background: #eceef0;
+}
+
+h3 {
+    margin: 0px; 
+    background: none;
 }

@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Whitney';
+    src: url('../assets/fonts/Whitney/light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+ @font-face {
+    font-family: 'Whitney';
+    src: url('../assets/fonts/Whitney/medium.ttf') format('truetype');
+    font-weight: 500;
+ }
+
+@font-face {
+    font-family: 'Whitney';
+    src: url('../assets/fonts/Whitney/semi-bold.ttf') format('truetype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Whitney';
+    src: url('../assets/fonts/Whitney/bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+
+
+
+

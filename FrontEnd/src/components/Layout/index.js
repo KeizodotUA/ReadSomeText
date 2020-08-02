@@ -4,11 +4,18 @@ import React from 'react'
 // Components
 import Header from './Header'
 
+// Styled
+import {
+  Content
+} from './styled';
+
 const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      {children}
+      <Content>
+        {children}
+      </Content>      
     </>
   );
 };

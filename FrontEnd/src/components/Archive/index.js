@@ -4,12 +4,12 @@ import React from 'react'
 // Components
 import Layout from '../Layout'
 
-const About = () => {
+const Archive = () => {
     return (
         <div>
-            About us...
+            Coming soon...
         </div>
     )
 }
 
-export default Layout()(About);
+export default Layout()(Archive);
