@@ -1,16 +1,13 @@
 // Absolute imports
 import React, { useState, useEffect } from 'react'
-import { NavLink, Link } from 'react-router-dom'
 
 // Icons
 import Logo from '@icons/logo/logo.png';
 
-// Components
-import HeaderButton from './HeaderButton/index'
-
 // Styled
 import {
     HeaderContainer,
+    HeaderButton,
     NavigationContainer,
     NavigationLink,
     HeaderLinkContent,
@@ -108,13 +105,31 @@ const NavigationButtons = [
     }
 ]
 
+function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height
+    };
+  }
+
 const Header = () => {
     const [selectedButton, setSelected] = useState("");
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
     
+    useEffect(() => {
+        function handleResize() {
+          setWindowDimensions(getWindowDimensions());
+        }
+    
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+      }, []);
+
     const headerButtonClick = (name) => {
-        if (selectedButton == name)
+        if(selectedButton == name)
             setSelected("")
-        else
+            else
             setSelected(name)
     }
 const isVisibleNavigationContainer = selectedButton !== ""
@@ -128,7 +143,11 @@ const isVisibleNavigationContainer = selectedButton !== ""
                             <img src={Logo} style={{height: "40px", verticalAlign:"middle"}} />
                         </HeaderLinkContent>                
                         <HeaderLinkContent>
-                            <h3>read some text</h3>
+                        {
+                            windowDimensions.width > 850 ?
+                               <h3>read some text</h3> :
+                               <h3>rst</h3>
+                        }                            
                         </HeaderLinkContent>                    
                     </NavigationLink>  
                 </HomeButton>  
@@ -137,10 +156,10 @@ const isVisibleNavigationContainer = selectedButton !== ""
                     HeaderButtons.map(name => {
                         return <HeaderButton 
                             key = {name}
-                            text = {name}
-                            isSelected = {name == selectedButton}    
-                            clickFunc = { () => {headerButtonClick(name)} }
-                            />                        
+                            btnColor = {name == selectedButton ? "#f9b2b2" : "#d5d8dd"}    
+                            onClick = { () => {headerButtonClick(name)}}>
+                                {name}
+                            </HeaderButton>                       
                     })
                 }
                 </ButtonsContainer>                 
@@ -154,7 +173,7 @@ const isVisibleNavigationContainer = selectedButton !== ""
                                     if(cat.name === selectedButton)
                                     {
                                         return cat.buttons.map(btn => {
-                                            return <NavigationLink to={btn.link}>
+                                            return <NavigationLink key={btn.name} to={btn.link}>
                                                 <NavigationButton>{btn.name}</NavigationButton>
                                             </NavigationLink>
                                         })
@@ -162,26 +181,10 @@ const isVisibleNavigationContainer = selectedButton !== ""
                                     
                                 }) 
                             }
-                        </NavigationContainer>
-                                     
-                    
+                        </NavigationContainer>                                   
                 }         
         </>
     )
 }
 
 export default Header;
-
-{
-    {/* NavigationButtons.map(category => {
-        if (category.name === selectedButton)
-            category.buttons.map(button => {
-                <NavigationLink to={button.link}>
-                    {button.name}
-                </NavigationLink>
-            })
-
-    }) */}
-}
-
-//console.log(NavigationButtons)

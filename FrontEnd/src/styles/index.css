@@ -1,9 +1,34 @@
 * {
     font-family: 'Whitney';
-    background: #eceef0;
+    background: #e4e6e9;
+    font-weight: 500;
+    font-size: 14px;
 }
 
 h3 {
     margin: 0px; 
     background: none;
+    font-weight: bold;
+    font-size: 34px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    background-color: inherit;
+}
+
+tr {
+    height: 35px;
+}
+
+td {
+    text-align: center;
+    background-color: inherit;
 }

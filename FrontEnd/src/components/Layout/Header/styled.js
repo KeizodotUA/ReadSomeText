@@ -6,7 +6,8 @@ export const HeaderContainer = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #e4e6e9;
+  background-color: #d5d8dd;
+  color: #000000;
   width: 100%;
   height: 50px;
   display: flex;
@@ -19,7 +20,8 @@ export const NavigationContainer = styled.div`
   position: fixed;
   top: 54px;
   left: 0;
-  background-color: #e4e6e9;
+  background-color: #d5d8dd;
+  color: 00000;
   width: 100%;
   z-index: 100;
   display: flex;
@@ -36,7 +38,9 @@ export const HeaderLinkContent = styled.div`
   vertical-align: middle;
   height: 49px;
   display: table-cell;
-  background: #e4e6e9
+  background: #d5d8dd;
+  color: #000000;
+  padding-left: 3px;
 `;
 
 export const NavigationLink = styled(NavLink)`
@@ -45,8 +49,9 @@ export const NavigationLink = styled(NavLink)`
 `;
 
 export const HomeButton = styled.div`
+  color: #000000;
   position: fixed; 
-  left: 0px
+  left: 0px;
 `;
 
 export const ButtonsContainer = styled.div`
@@ -60,8 +65,21 @@ export const NavigationButton = styled.div`
   padding-right: 15px;
   height: 35px;
   text-align: center; 
-  font-size: 16px;
-  background-color: #e4e6e9;
+  font-size: 17px;
+  background-color: #d5d8dd;
+  color: #000000;
   &:hover {
     font-weight: 600
+  }
+`;
+
+export const HeaderButton = styled.div`
+vertical-align: middle;
+display: table-cell;
+padding-left: 15px;
+padding-right: 15px;
+height: 50px;
+text-align: center; 
+font-size: 17px;
+background-color: ${(props) => (props.btnColor)};
 `;
