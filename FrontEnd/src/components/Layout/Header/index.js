@@ -4,12 +4,14 @@ import React, { useState, useEffect } from 'react'
 // Icons
 import Logo from '@icons/logo/logo.png';
 
+// Shared
+import { NavigationLink } from '@shared/'
+
 // Styled
 import {
     HeaderContainer,
     HeaderButton,
     NavigationContainer,
-    NavigationLink,
     HeaderLinkContent,
     HomeButton,
     ButtonsContainer,

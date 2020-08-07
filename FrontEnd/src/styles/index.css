@@ -5,6 +5,11 @@
     font-size: 14px;
 }
 
+h2 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
 h3 {
     margin: 0px; 
     background: none;
