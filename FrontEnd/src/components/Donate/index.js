@@ -4,11 +4,12 @@ import React from 'react'
 // Components
 import Layout from '../Layout'
 
+// Shared
+import TodoPage from '@shared/TodoPage'
+
 const Donate = () => {
     return (
-        <div>
-            Coming soon...
-        </div>
+        <TodoPage/>
     )
 }
 

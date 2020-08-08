@@ -4,6 +4,10 @@ import React, { useState, useEffect } from 'react'
 // Icons
 import Logo from '@icons/logo/logo.png';
 
+// Components
+import Navigation from './Navigation'
+import LogInForm from './LogInForm'
+
 // Shared
 import { NavigationLink } from '@shared/'
 
@@ -11,101 +15,13 @@ import { NavigationLink } from '@shared/'
 import {
     HeaderContainer,
     HeaderButton,
-    NavigationContainer,
     HeaderLinkContent,
     HomeButton,
     ButtonsContainer,
-    NavigationButton
+    LogInButton
 } from './styled';
 
 const HeaderButtons = [ "General", "Ratings", "Search", "Test"];
-
-const NavigationButtons = [
-    {
-        name: "General",
-        buttons: [
-            {
-                link: "/recent",
-                name: "Recent"
-            },
-            {
-                link: "/popular",
-                name: "Most popular"
-            },
-            {
-                link: "/archive",
-                name: "Archive"
-            },
-            {
-                link: "/uploads",
-                name: "Uploads"
-            },
-            {
-                link: "/donate",
-                name: "Donate"
-            },
-            {
-                link: "/info",
-                name: "Info"
-            },
-            {
-                link: "/",
-                name: "Useful stuff"
-            }            
-        ]
-    },
-    {
-        name: "Ratings",
-        buttons: [
-            {
-                link: "/daily-rating",
-                name: "Daily"
-            },
-            {
-                link: "/weekly-rating",
-                name: "Weekly"
-            },
-            {
-                link: "/monthly-rating",
-                name: "Monthly"
-            },
-            {
-                link: "/yearly-rating",
-                name: "Yearly"
-            },
-            {
-                link: "/custom-rating",
-                name: "Custom"
-            },
-            {
-                link: "/averages",
-                name: "Averages"
-            }           
-        ]
-    },
-    {
-        name: "Search",
-        buttons: [
-            {
-                link: "/search",
-                name: "Search"
-            }         
-        ]
-    },
-    {
-        name: "Test",
-        buttons: [
-            {
-                link: "/main",
-                name: "Main"
-            },
-            {
-                link: "/api",
-                name: "API page"
-            }          
-        ]
-    }
-]
 
 function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -134,7 +50,9 @@ const Header = () => {
             else
             setSelected(name)
     }
-const isVisibleNavigationContainer = selectedButton !== ""
+
+const isVisibleNavigationContainer = selectedButton !== "" || selectedButton !== "logIn"
+const isVisibleLogInForm = selectedButton === "logIn"
 
     return (
         <>
@@ -164,27 +82,13 @@ const isVisibleNavigationContainer = selectedButton !== ""
                             </HeaderButton>                       
                     })
                 }
-                </ButtonsContainer>                 
+                </ButtonsContainer>
+                <LogInButton onClick = { () => {headerButtonClick("logIn")}}>
+                    Log In
+                </LogInButton>
             </HeaderContainer>            
-                {
-                    isVisibleNavigationContainer &&
-                                            
-                        <NavigationContainer>
-                            {
-                                NavigationButtons.map(cat => {
-                                    if(cat.name === selectedButton)
-                                    {
-                                        return cat.buttons.map(btn => {
-                                            return <NavigationLink key={btn.name} to={btn.link}>
-                                                <NavigationButton>{btn.name}</NavigationButton>
-                                            </NavigationLink>
-                                        })
-                                    }
-                                    
-                                }) 
-                            }
-                        </NavigationContainer>                                   
-                }         
+            { isVisibleNavigationContainer && <Navigation selectedButton={selectedButton} /> }
+            { isVisibleLogInForm && <LogInForm/> }         
         </>
     )
 }
