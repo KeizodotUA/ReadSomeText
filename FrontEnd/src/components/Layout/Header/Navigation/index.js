@@ -42,7 +42,7 @@ const NavigationButtons = [
             {
                 link: "/info",
                 name: "Info",
-                isImplemented: false
+                isImplemented: true
             },
             {
                 link: "/",

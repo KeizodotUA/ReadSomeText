@@ -60,7 +60,7 @@ const isVisibleLogInForm = selectedButton === "logIn"
                 <HomeButton>
                     <NavigationLink to='/'>
                         <HeaderLinkContent>
-                            <img src={Logo} style={{height: "40px", verticalAlign:"middle"}} />
+                            <img src={Logo} style={{height: "40px", verticalAlign:"middle", background: "inherit"}} />
                         </HeaderLinkContent>                
                         <HeaderLinkContent>
                         {
