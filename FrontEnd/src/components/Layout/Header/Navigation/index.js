@@ -1,5 +1,6 @@
 // Absolute imports
 import React from 'react'
+import PropTypes from 'prop-types';
 
 // Shared
 import { NavigationLink } from '@shared/'
@@ -132,5 +133,10 @@ const Navigation = (props) => {
         </Container>
     )
 }
+
+Navigation.propTypes = {
+    selectedButton: PropTypes.string
+}
+
 
 export default Navigation;

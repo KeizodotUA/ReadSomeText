@@ -6,11 +6,9 @@ export const Container = styled.div`
   top: 54px;
   left: 0;
   background-color: #d5d8dd;
-  color: 00000;
+  color: #00000;
   width: 100%;
   z-index: 100;
-  justify-content: center;  
-  content-align: middle;
   width: 100%;
   height: auto;
 `;

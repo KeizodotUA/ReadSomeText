@@ -24,7 +24,6 @@ const About = () => {
             Site structure - <a href="https://moongourd.com/">moongourd.com</a>
             <br/>
             Texts from <a href="https://baconipsum.com/">baconipsum.com</a>
-            
         </Wrapper>
     )
 }
