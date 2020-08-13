@@ -20,8 +20,8 @@ const Layout = ({ children }) => {
   );
 };
 
-export default () => (Child) => () => (
-  <Layout>
-    <Child />
+export default (customProps) => (Child) => (props) => (
+  <Layout {...customProps} {...props}>
+    <Child {...props} />
   </Layout>
 );

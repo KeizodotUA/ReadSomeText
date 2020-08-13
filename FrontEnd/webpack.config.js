@@ -9,7 +9,8 @@ module.exports = {
   },
   output: {
     path: outputPath,
-    filename: "index-bundle.js"
+    filename: "index-bundle.js",
+    publicPath: '/',
   },
   resolve: {
     symlinks: false,
