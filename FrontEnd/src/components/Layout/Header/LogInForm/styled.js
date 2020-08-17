@@ -5,8 +5,8 @@ export const Container = styled.div`
   position: fixed;
   top: 54px;
   left: 0;
-  background-color: #d5d8dd;
-  color: #00000;
+  background-color: ${({ theme }) => theme.headerColor};
+  color: ${({ theme }) => theme.textColor};
   width: 100%;
   z-index: 100;
   width: 100%;
@@ -24,11 +24,12 @@ export const Input = styled.input`
   text-align: center;
   outline: none;
   border: none;
-  border-bottom: 1px solid #f9b2b2;
-  background-color: #d5d8dd; 
+  border-bottom: 1px solid ${({ theme }) => theme.selectedColor};
+  background-color: ${({ theme }) => theme.headerColor}; 
   font-size: 18px;  
+  color: ${({ theme }) => theme.textColor};
   &::placeholder {    
-    color: #f9b2b2;
+    color: ${({ theme }) => theme.selectedColor};
     font-size: 18px;
     vertical-align: middle;
   };
@@ -44,5 +45,5 @@ export const Button = styled.div`
     margin-right: auto;  
     margin-top: 30px;
     margin-bottom: 30px;
-    background-color: #4e5560;
+    background-color: ${({ theme }) => theme.disabledColor};
 `;

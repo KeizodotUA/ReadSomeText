@@ -9,4 +9,6 @@ export const Content = styled.div`
   width: 100%;
   height: calc(100% - 54px); 
   overflow: auto;
+  background-color: ${({ theme }) => theme.bodyColor};
+  color: ${({ theme }) => theme.textColor};
 `;
