@@ -122,7 +122,7 @@ const Navigation = (props) => {
                     if (cat.name === props.selectedButton) {
                         return cat.buttons.map(btn => {
                             return <NavigationLink key={btn.name} to={btn.link}>
-                                <NavigationButton btnColor={btn.isImplemented ? "#d5d8dd" : "#4e5560"}>
+                                <NavigationButton isImplemented={btn.isImplemented}>
                                     {btn.name}
                                 </NavigationButton>
                             </NavigationLink>

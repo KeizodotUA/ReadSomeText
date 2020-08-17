@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     display: grid;
+    color: ${({ theme }) => theme.textColor};
 `;
 
 export const TitleContainer = styled.div`
@@ -24,7 +25,7 @@ export const TextContainer = styled.div`
     margin-top: 30px;
     margin-left: 30px;
     margin-right: 30px;
-    background-color: #fafafa;
+    background-color: ${({ theme }) => theme.textContainerColor};    
     font-size: 15px;
 `;
 
@@ -46,7 +47,7 @@ export const CountContent = styled.div`
 export const H2 = styled.h2`
     font-size: 19px;
     fontWeight: 400;
-    background-color: #fafafa;
+    background-color: ${({ theme }) => theme.darkTableColor};
     margin: 0; 
     padding: 5px; 
     height: 30px
@@ -55,7 +56,7 @@ export const H2 = styled.h2`
 export const H3 = styled.h2`
     font-size: 25px;
     fontWeight: 400;
-    background-color: #fafafa;
+    background-color: ${({ theme }) => theme.darkTableColor};
     margin: 0; 
     padding: 5px; 
     height: 30px

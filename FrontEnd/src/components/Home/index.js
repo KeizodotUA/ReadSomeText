@@ -12,10 +12,9 @@ import { getRandomEntries } from '@api/Faker';
 import {
     Container,
     TableContainer,
-    TableRow
+    TableRow,
+    TR
 } from './styled';
-
-const tablecolors = ["#fafafa", "#f2f3f5"];
 
 const INITIAL_ENTRY = [{
     id: 0,
@@ -25,6 +24,7 @@ const INITIAL_ENTRY = [{
     likes: "",
     bookmarkts: ""
 }];
+
 const Home = () => {
     const [entries, setEntries] = useState(INITIAL_ENTRY);
 
@@ -48,7 +48,7 @@ const Home = () => {
             <TableContainer>
                 <table>
                     <thead>
-                        <tr style={{ backgroundColor: "#eceef0" }}>
+                        <TR>
                             <th width="35%">
                                 Author
                             </th>
@@ -64,14 +64,14 @@ const Home = () => {
                             <th width="15%">
                                 Bookmarkts
                             </th>
-                        </tr>
+                        </TR>
                     </thead>
                     <tbody>
                         {
                             entries.map(entry => {
                                 return <TableRow
                                     key={entry.id}
-                                    rowColor={tablecolors[entry.id % 2]}
+                                    rowColor={entry.id % 2 == 0 ? 'dark' : 'light'}
                                     onClick={() => { rowClick(entry.id) }}>
                                     <td>{entry.author}</td>
                                     <td>{entry.title}</td>

@@ -76,7 +76,7 @@ const isVisibleLogInForm = selectedButton === "logIn"
                     HeaderButtons.map(name => {
                         return <HeaderButton 
                             key = {name}
-                            btnColor = {name == selectedButton ? "#f9b2b2" : "#d5d8dd"}    
+                            isSelected = {name == selectedButton}    
                             onClick = { () => {headerButtonClick(name)}}>
                                 {name}
                             </HeaderButton>                       

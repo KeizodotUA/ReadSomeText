@@ -5,12 +5,12 @@ export const HeaderContainer = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #d5d8dd;
-  color: #000000;
+  background-color: ${({ theme }) => theme.headerColor};
+  color: ${({ theme }) => theme.textColor};
   width: 100%;
   height: 50px;
   display: flex;
-  border-bottom: 4px solid #f9b2b2;
+  border-bottom: 4px solid ${({ theme }) => theme.selectedColor};
   justify-content: center;
   z-index: 100;
 `;
@@ -23,11 +23,14 @@ padding-right: 15px;
 height: 50px;
 text-align: center; 
 font-size: 17px;
-background-color: ${(props) => (props.btnColor)};
+background-color: ${(props) => 
+  props.isSelected ?
+  ({ theme }) => theme.selectedColor : 
+  ({ theme }) => theme.headerColor};
 `;
 
 export const HomeButton = styled.div`
-  color: #000000;
+  color: ${({ theme }) => theme.textColor};
   position: fixed; 
   left: 0px;
 `;
@@ -36,8 +39,8 @@ export const HeaderLinkContent = styled.div`
   vertical-align: middle;
   height: 49px;
   display: table-cell;
-  background: #d5d8dd;
-  color: #000000;
+  background: ${({ theme }) => theme.headerColor};
+  color: ${({ theme }) => theme.textColor};
   padding-left: 3px;
 `;
 
@@ -46,7 +49,7 @@ export const ButtonsContainer = styled.div`
 `;
 
 export const LogInButton = styled.div`
-  background-color: #d5d8dd;
+  background-color: ${({ theme }) => theme.headerColor};
   position: fixed;
   top: 0;
   right: 0;  

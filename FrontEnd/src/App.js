@@ -9,12 +9,17 @@ import store from './store/configureStore'
 // Components
 import Routes from './Routes'
 
+// Helpers
+import MyThemeProvider from './helpers/MyThemeProvider'
+
 const App = () => {
     return (
         <Provider store={store}>
-            <BrowserRouter>
-                <Routes />
-            </BrowserRouter>
+            <MyThemeProvider>
+                <BrowserRouter>
+                    <Routes />
+                </BrowserRouter>
+            </MyThemeProvider>            
         </Provider>
     )
 }

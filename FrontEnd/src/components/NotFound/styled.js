@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: ${({ theme }) => theme.bodyColor};
   width: 100%;
-  height: auto;
+  height: 100%;
   padding: 50px;
+  color: ${({ theme }) => theme.textColor};
 `;
 
 export const Content = styled.div`
@@ -11,7 +16,7 @@ export const Content = styled.div`
     align-items: center;
     justify-content: center;
     float: left;
-    width: 100%
+    width: 100%;
 `;
 
 export const HomeButton = styled.div`
@@ -20,8 +25,9 @@ export const HomeButton = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #eceef0;
+    color: ${({ theme }) => theme.textColor};
+    background-color: ${({ theme }) => theme.headerTableColor};
     &:hover {
-    background-color: #ffffff;
+    background-color: ${({ theme }) => theme.textContainerColor};
   }
 `;

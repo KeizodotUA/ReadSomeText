@@ -5,8 +5,8 @@ export const Container = styled.div`
   position: fixed;
   top: 54px;
   left: 0;
-  background-color: #d5d8dd;
-  color: 00000;
+  background-color: ${({ theme }) => theme.headerColor};
+  color: ${({ theme }) => theme.textColor};
   width: 100%;
   z-index: 100;
   display: flex;
@@ -21,8 +21,11 @@ export const NavigationButton = styled.div`
   height: 35px;
   text-align: center; 
   font-size: 17px;
-  background-color: ${(props) => (props.btnColor)};
-  color: #000000;
+  background-color: ${(props) => 
+  props.isImplemented ?
+  ({ theme }) => theme.headerColor : 
+  ({ theme }) => theme.disabledColor};
+  color: ${({ theme }) => theme.textColor};
   &:hover {
     font-weight: 600
   }

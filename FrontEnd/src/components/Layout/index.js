@@ -11,12 +11,12 @@ import {
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <div >
       <Header />
       <Content>
         {children}
       </Content>      
-    </>
+    </div>
   );
 };
 
