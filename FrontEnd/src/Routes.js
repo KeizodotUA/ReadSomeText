@@ -20,9 +20,6 @@ import CustomRating from '@components/CustomRating/Loadable'
 import Averages from '@components/Averages/Loadable'
 // Search tab
 import Search from '@components/Search/Loadable'
-// Dev test tab
-import Main from '@components/Main/Loadable'
-import APIPage from '@components/APIPage/Loadable'
 //
 import Text from '@components/Text/Loadable'
 import NotFound from '@components/NotFound/Loadable'
@@ -51,10 +48,6 @@ export default () => (
 
         {/* Search */}
         <Route path='/search' component={Search} />
-
-        {/* Dev test */}
-        <Route path='/main' component={Main} />       
-        <Route path='/api' component={APIPage} />
 
         <Route path="/text/:textId" component={Text} />
         <Route path='*' component={NotFound} />

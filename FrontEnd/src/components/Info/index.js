@@ -5,26 +5,27 @@ import styled from 'styled-components';
 // Components
 import Layout from '../Layout'
 
-const Wrapper = styled.div`
-    padding: 10px;
-    font-size: 14px;
-`;
+// Styled
+import {
+    Container,
+    StyledLink
+} from './styled';
 
 const About = () => {
     return (
-        <Wrapper>
+        <Container>
             <h2 style={{fontSize: "28px"}}>About</h2>
             <p>Site created for educational purposes only.</p>            
             Used stuff:
             <br/>
-            Site logo - <a href="https://www.iconfinder.com/">www.iconfinder.com</a>
+            Site logo - <StyledLink href="https://www.iconfinder.com/">www.iconfinder.com</StyledLink>
             <br/>
-            Color themes - <a href="https://discord.com/">discord.com</a>
+            Color themes - <StyledLink href="https://discord.com/">discord.com</StyledLink>
             <br/>
-            Site structure - <a href="https://moongourd.com/">moongourd.com</a>
+            Site structure - <StyledLink href="https://moongourd.com/">moongourd.com</StyledLink>
             <br/>
-            Texts from <a href="https://baconipsum.com/">baconipsum.com</a>
-        </Wrapper>
+            Texts from <StyledLink href="https://baconipsum.com/">baconipsum.com</StyledLink>
+        </Container>
     )
 }
 

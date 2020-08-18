@@ -1,9 +1,9 @@
 // Absolute imports
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types';
 
 // Shared
-import { NavigationLink } from '@shared/'
+import { NavigationLink } from '@shared/';
 
 // Styled
 import {
@@ -96,25 +96,13 @@ const NavigationButtons = [
                 isImplemented: false
             }
         ]
-    },
-    {
-        name: "Test",
-        buttons: [
-            {
-                link: "/main",
-                name: "Main",
-                isImplemented: true
-            },
-            {
-                link: "/api",
-                name: "API page",
-                isImplemented: true
-            }
-        ]
     }
 ]
 
 const Navigation = (props) => {
+
+    const visibleThemeButton = props.selectedButton === "General";
+
     return (
         <Container>
             {
@@ -130,13 +118,23 @@ const Navigation = (props) => {
                     }
                 })
             }
+            {
+                visibleThemeButton && <div>
+                    <NavigationButton isImplemented={true} onClick={() =>props.changeTheme(props.theme.name)}>
+                        {
+                            props.theme.name === 'dark' ?
+                                'Light theme' :
+                                'Dark theme'
+                        }
+                    </NavigationButton>
+                </div>
+            }
         </Container>
     )
-}
+};
 
 Navigation.propTypes = {
     selectedButton: PropTypes.string
-}
-
+};
 
 export default Navigation;

@@ -1,8 +1,11 @@
 // Absolute imports
 import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 // Icons
-import Logo from '@icons/logo/logo.png';
+import BlackLogo from '@icons/logo/blogo.png';
+import WhiteLogo from '@icons/logo/wlogo.png';
 
 // Components
 import Navigation from './Navigation'
@@ -10,6 +13,9 @@ import LogInForm from './LogInForm'
 
 // Shared
 import { NavigationLink } from '@shared/'
+
+// Actions
+import { changeTheme } from '@actions/theme';
 
 // Styled
 import {
@@ -21,7 +27,7 @@ import {
     LogInButton
 } from './styled';
 
-const HeaderButtons = [ "General", "Ratings", "Search", "Test"];
+const HeaderButtons = [ "General", "Ratings", "Search"];
 
 function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -31,7 +37,7 @@ function getWindowDimensions() {
     };
   }
 
-const Header = () => {
+const Header = (props) => {
     const [selectedButton, setSelected] = useState("");
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
     
@@ -60,7 +66,9 @@ const isVisibleLogInForm = selectedButton === "logIn"
                 <HomeButton>
                     <NavigationLink to='/'>
                         <HeaderLinkContent>
-                            <img src={Logo} style={{height: "40px", verticalAlign:"middle", background: "inherit"}} />
+                            <img 
+                                src={props.theme.name === "dark" ? WhiteLogo : BlackLogo} 
+                                style={{height: "40px", verticalAlign:"middle", background: "inherit"}} />
                         </HeaderLinkContent>                
                         <HeaderLinkContent>
                         {
@@ -87,10 +95,22 @@ const isVisibleLogInForm = selectedButton === "logIn"
                     Log In
                 </LogInButton>
             </HeaderContainer>            
-            { isVisibleNavigationContainer && <Navigation selectedButton={selectedButton} /> }
+            { isVisibleNavigationContainer && <Navigation selectedButton={selectedButton} theme={props.theme} changeTheme={props.changeTheme} /> }
             { isVisibleLogInForm && <LogInForm/> }         
         </>
     )
-}
+};
 
-export default Header;
+const mapStateToProps = (state) => {
+    return {
+        theme: state.theme
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeTheme: bindActionCreators(changeTheme, dispatch)
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
