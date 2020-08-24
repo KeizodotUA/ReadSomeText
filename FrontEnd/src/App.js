@@ -1,7 +1,7 @@
 // Absolute imports
 import React from "react";
 import { Provider } from 'react-redux'
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 // Store
 import store from './store/configureStore'
@@ -16,9 +16,9 @@ const App = () => {
     return (
         <Provider store={store}>
             <MyThemeProvider>
-                <BrowserRouter>
+                <HashRouter basename={"ReadSomeText/"}>
                     <Routes />
-                </BrowserRouter>
+                </HashRouter>
             </MyThemeProvider>            
         </Provider>
     )

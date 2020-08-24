@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "homepage": "https://keizodotua.github.io/ReadSomeText",
   "scripts": {
-    "start": "webpack-dev-server --progress --colors"
+    "start": "webpack-dev-server --progress --colors",
+    "build": "webpack --mode production"
   },
   "author": "Oleksiy Konstantyniuk",
   "license": "ISC",

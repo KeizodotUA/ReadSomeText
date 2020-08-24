@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: outputPath,
     filename: "index-bundle.js",
-    publicPath: '/',
+    publicPath: '/ReadSomeText/',
   },
   resolve: {
     symlinks: false,
