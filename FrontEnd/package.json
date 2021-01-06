@@ -11,7 +11,7 @@
   "author": "Oleksiy Konstantyniuk",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "faker": "^4.1.0",
     "file-loader": "^6.0.0",
     "prop-types": "^15.7.2",
